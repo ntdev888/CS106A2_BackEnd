@@ -7,6 +7,15 @@ This project contains a sample sqlite.db file
 This contains our testing data and users so that the local application can be used and tested showcasing our project.
 
 The below instructions are to meet the assesment criteria for installing the application for the user.
+
+Login details:
+
+taunic (superuser)
+N1c@Y00B33
+
+mattt
+matt@Y00B33
+
 ---
 
 ## Prerequisites
@@ -22,11 +31,10 @@ Before you begin, ensure you have the following installed on your system:
    First, clone the application repository to your local machine using Git:
 
    ```bash
-   git clone https://yourrepositoryurl.git
+   git clone git@github.com:ntdev888/CS106A2_BackEnd.git
    cd path/to/your/project
    ```
 
-   Replace `https://yourrepositoryurl.git` with the URL of your Git repository.
 
 2. **Create a Virtual Environment**
 
@@ -97,17 +105,16 @@ Before you begin, ensure you have the following installed on your system:
    Run the Django development server:
 
    ```bash
-   python manage.py runserver
+   python manage.py runserver 8080
    ```
 
 2. **Access the Application**
 
-   Open your web browser and navigate to `http://localhost:8000` to view the application. Access the Django admin site at `http://localhost:8000/admin` using the superuser account you created.
+Application is only accessible as a API endpoint for SupportPlus-React-user-app.
+Please ensure that port 8080 is used so react app can talk to server.
 
 ## Additional Configuration
 
 - For additional configurations such as setting up email backends, caching, or static files handling for production, refer to the Django documentation and customize your `settings.py` file accordingly.
 
 ---
-
-Ensure to replace placeholders like `your_repository_url`, `your_secret_key`, `your_database_url`, etc., with actual values relevant to your project. This guide provides a general approach to setting up a Django backend application, and specific details may vary based on your project's requirements.
