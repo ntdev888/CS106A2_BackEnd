@@ -43,6 +43,10 @@ curl -X POST http://localhost:8080/api/categories/ \
      -H 'Content-Type: application/json' \
      -d '{"name": "Technical Support", "description": "Issues related to technical problems with our software."}'
 
+curl -X POST http://localhost:8080/api/categories/ \
+     -H 'Content-Type: application/json' \
+     -d '{"name": "AuditPlus", "description": "Issues related to technical problems with AuditPlus Software."}'
+
 
 taunic
 N1c@Y00B33
@@ -61,3 +65,10 @@ curl -X POST http://localhost:8080/api/internalnotes/create/ \
      -H 'Content-Type: application/json' \
      -H 'Authorization: Token cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252' \
      -d '{"ticket": "1","note": "This is a sample internal note.","message_to_user": "Message to the user."}'
+
+
+curl -X POST http://localhost:8080/api/resolutions/create/ \
+     -H 'Content-Type: application/json' \
+     -H 'Authorization: Token cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252' \
+     -d '{"ticket": "3","resolved_by": "2","resolution_steps": "Steps to resolve the issue","resolution_date": "2023-03-22T14:00:00Z"}'
+
