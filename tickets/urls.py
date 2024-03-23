@@ -17,8 +17,8 @@ urlpatterns = [
     path('api/get-user-id/', get_user_id, name='get-user-id'),
     path('api/categories/', CategoryCreateView.as_view(), name='category-create'),
     path('api/resolutions/create/', ResolutionCreateView.as_view(), name='resolution-create'),
-    path('resolutions/<int:pk>/', ResolutionRetrieveView.as_view(), name='resolution-detail'),
-    path('resolutions/update/<int:pk>/', ResolutionUpdateView.as_view(), name='resolution-update'),
-    path('internalnotes/create/', InternalNoteCreateView.as_view(), name='internalnote-create'),
-    path('internalnotes/update/<int:pk>/', InternalNoteUpdateView.as_view(), name='internalnote-update'),
+    path('api/resolutions/<int:pk>/', ResolutionRetrieveView.as_view(), name='resolution-detail'),
+    path('api/resolutions/update/<int:pk>/', ResolutionUpdateView.as_view(), name='resolution-update'),
+    path('api/internalnotes/create/', InternalNoteCreateView.as_view(), name='internalnote-create'),
+    path('api/internalnotes/update/<int:pk>/', InternalNoteUpdateView.as_view(), name='internalnote-update'),
 ]

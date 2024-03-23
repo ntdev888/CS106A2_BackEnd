@@ -60,4 +60,4 @@ curl -X POST http://localhost:8080/api/tickets/create/ \
 curl -X POST http://localhost:8080/api/internalnotes/create/ \
      -H 'Content-Type: application/json' \
      -H 'Authorization: Token cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252' \
-     -d '{"ticket": "3","note": "This is a sample internal note.","message_to_user": "Message to the user."}'
+     -d '{"ticket": "1","note": "This is a sample internal note.","message_to_user": "Message to the user."}'
