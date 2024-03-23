@@ -21,10 +21,6 @@ curl -X Get http://localhost:8080/api/tickets/7/ \
      -H 'Authorization: Token cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252' \
      -H 'Content-Type: application/json'
      
-##Create login token
-curl -X POST http://localhost:8080/api-token-auth/ \
-     -H 'Content-Type: application/json' \
-     -d '{"username": "curltest", "password": "fuckTh1sShit"}'
 
 ##login token
 {"token":"cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252"}
@@ -59,7 +55,7 @@ matt@Y00B33
 curl -X POST http://localhost:8080/api/tickets/create/ \
      -H 'Content-Type: application/json' \
      -H 'Authorization: Token cc2c7a1d99a36f4bbdd92cb937170ff93e6d6252' \
-     -d '{"user":"1","title": "Example Ticket Title","description": "Example ticket description detailing the issue.","status": "OP","contactMe": "Email","area": " ","priority": "Low"}'
+     -d '{"user":"1","title": "video example", "description": "Showcasing Curl Testing.","status": "OP","contactMe": "Email","area": " ","priority": "Low"}'
 
 curl -X POST http://localhost:8080/api/internalnotes/create/ \
      -H 'Content-Type: application/json' \
