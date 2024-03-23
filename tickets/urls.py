@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import TicketCreate, TicketList, TicketDetail, CreateUserView, TicketUpdate, TicketListByUser, FeedbackCreate, FeedbackDetail, FeedbackListByUser, FeedbackByAssignTo
-from .views import FeedbackUpdateView, get_user_id, CategoryCreateView, ResolutionCreateView, ResolutionRetrieveView, ResolutionUpdateView
+from .views import FeedbackUpdateView, get_user_id, CategoryCreateView, ResolutionCreateView, ResolutionRetrieveView, ResolutionUpdateView, InternalNoteCreateView, InternalNoteUpdateView
 
 urlpatterns = [
     path('api/users/', CreateUserView.as_view(), name='create-user'),
@@ -19,4 +19,6 @@ urlpatterns = [
     path('api/resolutions/create/', ResolutionCreateView.as_view(), name='resolution-create'),
     path('resolutions/<int:pk>/', ResolutionRetrieveView.as_view(), name='resolution-detail'),
     path('resolutions/update/<int:pk>/', ResolutionUpdateView.as_view(), name='resolution-update'),
+    path('internalnotes/create/', InternalNoteCreateView.as_view(), name='internalnote-create'),
+    path('internalnotes/update/<int:pk>/', InternalNoteUpdateView.as_view(), name='internalnote-update'),
 ]

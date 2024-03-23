@@ -31,3 +31,11 @@ class ResolutionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resolution
         fields = '__all__'
+
+from rest_framework import serializers
+from .models import InternalNote
+
+class InternalNoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InternalNote
+        fields = '__all__'  

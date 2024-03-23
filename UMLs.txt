@@ -1,0 +1,63 @@
+@startuml
+!theme plain
+
+package "SupportPlus Models" {
+    class Ticket {
+        +title: CharField
+        +description: TextField
+        +status: CharField
+        +assignTo: CharField
+        +contactMe: CharField
+        +area: CharField
+        +priority: CharField
+        +category: ForeignKey
+    }
+    class Category {
+        +name: CharField
+        +description: TextField
+    }
+    class Feedback {
+        +ticket: OneToOneField
+        +rating: PositiveSmallIntegerField
+        +comment: TextField
+    }
+    class InternalNote {
+        +ticket: ForeignKey
+        +note: TextField
+        +message_to_user: TextField
+    }
+    class Resolution {
+        +ticket: OneToOneField
+        +resolved_by: ForeignKey
+        +resolution_steps: TextField
+    }
+    Ticket "1" *-- "1" Category : has >
+    Ticket "1" o-- "1" Feedback : has >
+    Ticket "1" *-- "*" InternalNote : has >
+    Ticket "1" o-- "1" Resolution : has >
+}
+
+package "SupportPlus Views" {
+    class APIView {
+    }
+    class ListAPIView {
+    }
+    class RetrieveAPIView {
+    }
+    class CreateAPIView {
+    }
+    class RetrieveUpdateAPIView {
+    }
+    APIView <|-- ListAPIView
+    APIView <|-- RetrieveAPIView
+    APIView <|-- CreateAPIView
+    APIView <|-- RetrieveUpdateAPIView
+}
+
+
+Ticket --> APIView : interacts >
+Category --> APIView : interacts >
+Feedback --> APIView : interacts >
+InternalNote --> APIView : interacts >
+Resolution --> APIView : interacts >
+@enduml

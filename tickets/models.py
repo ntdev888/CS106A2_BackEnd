@@ -3,14 +3,13 @@ from django.conf import settings
 from django.utils import timezone
 
 
-# Define your ticket status choices
 class TicketStatus(models.TextChoices):
     OPEN = 'OP', 'Open'
     IN_PROGRESS = 'IP', 'In Progress'
     CLOSED = 'CL', 'Closed'
 
 class AssignTo(models.TextChoices):
-    BLANK = " ", " "  # Provide a display value for BLANK
+    BLANK = " ", " " 
     PAUL = "Paul", "Paul"
     DAVID = "David", "David"
     MIKE = "Mike", "Mike"
@@ -22,7 +21,7 @@ class ContactBy(models.TextChoices):
     TEXT = "Text Msg", "Text Msg"
 
 class IssueArea(models.TextChoices):
-    BLANK = " ", " "  # Provide a display value for BLANK
+    BLANK = " ", " "  
     CELLPHONE = "Cellphone", "Cellphone"
     COMPUTER = "Laptop", "Laptop"
     AUDITPLUS = "AuditPlus", "AuditPlus"

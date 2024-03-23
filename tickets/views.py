@@ -8,7 +8,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveUpdate
 from django.contrib.auth.models import User
 from rest_framework import status, generics
 from .models import Ticket, Feedback, InternalNote, Category, Resolution
-from .serializers import TicketSerializer, UserSerializer, FeedbackSerializer, CategorySerializer, ResolutionSerializer
+from .serializers import TicketSerializer, UserSerializer, FeedbackSerializer, CategorySerializer, ResolutionSerializer, InternalNoteSerializer
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -73,6 +73,7 @@ class TicketListByUser(ListAPIView):
         return queryset
 
 
+
 class FeedbackCreate(CreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Feedback.objects.all()
@@ -110,6 +111,7 @@ class FeedbackUpdateView(RetrieveUpdateAPIView):
         return Feedback.objects.get(ticket__id=ticket_id)
     
 
+
 class CategoryCreateView(CreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -145,4 +147,22 @@ class ResolutionUpdateView(RetrieveUpdateAPIView):
     def perform_update(self, serializer):
         serializer.save()
 
+
+
+
+class InternalNoteCreateView(CreateAPIView):
+    queryset = InternalNote.objects.all()
+    serializer_class = InternalNoteSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
+class InternalNoteUpdateView(RetrieveUpdateAPIView):
+    queryset = InternalNote.objects.all()
+    serializer_class = InternalNoteSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_update(self, serializer):
+        serializer.save()
 
